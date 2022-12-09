@@ -6,6 +6,12 @@ pipeline {
         }
     }
     stages {
+        stage ('git') {
+            steps {
+                sh "yum install git -y"
+            }
+        }
+        
         stage ('config') {
             steps {
                 sh "git config --global user.Rupesh"
