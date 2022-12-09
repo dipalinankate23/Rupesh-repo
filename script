@@ -6,17 +6,7 @@ pipeline {
         }
     }
     stages {
-        stage ('git') {
-            steps {
-                sh "yum install git -y"
-            }
-        }
-        
-        stage ('config') {
-            steps {
-                sh "git config --global user.Rupesh"
-                sh "git config --global user.abc@gmail.com"
-            }
-        }
-    }
-}
+        stage ('push') {
+         steps {
+            sh "git push origin main"
+          
