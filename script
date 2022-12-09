@@ -12,11 +12,7 @@ pipeline {
                 sh "service httpd start"
             }
         }
-        stage ('create file') {
-            steps {
-                sh "echo 'i am good' >> index.html"
-             }
-        }
+        
         stage ('copy file') {
             steps {
                 sh "cp index.html /var/www/html"
