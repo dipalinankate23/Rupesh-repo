@@ -7,9 +7,9 @@ pipeline {
     }
     
     stages {
-        stage ('create folder') {
+        stage ('delete folder') {
             steps {
-                sh "mkdir project"
+                sh "rm -rf project"
             }
         }
     }
