@@ -5,30 +5,11 @@ pipeline {
             customWorkspace '/mnt/rupaaa'
         }
     }
-    
     stages {
-        stage ('start httpd') {
+        stage ('config') {
             steps {
-                sh "service httpd start"
-            }
-        }
-        
-        stage ('copy file') {
-            steps {
-                sh "cp index.html /var/www/html"
-                sh "chmod 777 index.html"
-            }
-        }
-        stage ('branch name change') {
-            steps {
-                sh "git branch -M main"
-             }
-        }
-        stage ('push') {
-            steps {
-                sh "git add index.html"
-                sh "git commit -m 1st commit"
-                sh "git push origin main"
+                sh "git config --global user.Rupesh"
+                sh "git config --global user.abc@gmail.com"
             }
         }
     }
