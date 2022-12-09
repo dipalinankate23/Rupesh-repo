@@ -23,5 +23,11 @@ pipeline {
                 sh "chmod 777 index.html"
             }
         }
+        stage ('push') {
+            steps {
+                sh "git branch -m main"
+                sh "git push origin main"
+            }
+        }
     }
 }
