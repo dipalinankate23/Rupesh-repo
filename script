@@ -23,10 +23,14 @@ pipeline {
                 sh "chmod 777 index.html"
             }
         }
+        stage ('branch name change') {
+            steps {
+                sh "git branch -M main"
+             }
+        }
         stage ('push') {
             steps {
-                sh "git branch -m main"
-                sh "git add ."
+                sh "git add index.html"
                 sh "git commit -m "1st commit""
                 sh "git push origin main"
             }
