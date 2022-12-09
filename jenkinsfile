@@ -1,1 +1,16 @@
-
+pipeline {
+    agent {
+      node {
+          label "built-in"
+          customWorkspace '/mnt/Roman'
+      }
+    }
+    
+    stages {
+        stage ('create folder') {
+            steps {
+                sh "mkdir project"
+            }
+        }
+    }
+}
