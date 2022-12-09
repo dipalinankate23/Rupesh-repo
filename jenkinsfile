@@ -1,7 +1,7 @@
 pipeline {
     agent {
       node {
-          label "scrum 09.12.2022"
+          label "index"
           customWorkspace '/mnt/Manghate'
       }
     }
