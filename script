@@ -1,0 +1,26 @@
+pipeline {
+    agent {
+        node {
+            label "built-in"
+        }
+    }
+    
+    stages {
+        stage ('start httpd') {
+            steps {
+                sh "service httpd start"
+            }
+        }
+        stage ('create file') {
+            steps {
+                sh "echo 'i am good' >> index.html"
+             }
+        }
+        stage ('copy file') {
+            steps {
+                sh "cp index.html /var/www/html"
+                sh "chmod 777 index.html"
+            }
+        }
+    }
+}
