@@ -1,15 +1,15 @@
 pipeline {
     agent {
       node {
-          label "built-in"
-          customWorkspace '/mnt/Roman'
+          label "scrum 09.12.2022"
+          customWorkspace '/mnt/Manghate'
       }
     }
     
     stages {
         stage ('delete folder') {
             steps {
-                sh "rm -rf project"
+                "echo 'i am rupesh' >> 1.txt"
             }
         }
     }
