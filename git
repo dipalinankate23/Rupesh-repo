@@ -1,0 +1,21 @@
+pipeline {
+  agent {
+    node {
+      label "built-in"
+    }
+  }
+  
+  stages {
+     stage ('git-install') {
+        steps {
+          sh "yum install git -y"
+        }
+     }
+     
+     stage ('git version') {
+        steps {
+          sh "git --version"
+        }
+     }
+   }
+}
