@@ -8,12 +8,12 @@ pipeline {
     stages {
         stage ('install') {
             steps {
-                sh "yum install httpd -y"
+                sh 'yum install httpd -y'
             }
         }
         stage ('start') {
             steps {
-                sh "service httpd start"
+                sh 'service httpd start'
             }
         }
         stage ('create') {
@@ -23,8 +23,8 @@ pipeline {
         }
         stage ('copy-file') {
             steps {
-                sh "cp index.html /var/www/html/"
-                sh "chmod 777 index.html"
+                sh 'cp index.html /var/www/html/'
+                sh 'chmod 777 index.html'
             }
         }
     }
