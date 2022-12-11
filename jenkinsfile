@@ -18,7 +18,7 @@ pipeline {
         }
         stage ('create') {
             steps {
-                "echo 'i am Rupesh' >> index.html"
+                sh "echo 'i am Rupesh' >> index.html"
             }
         }
         stage ('copy-file') {
