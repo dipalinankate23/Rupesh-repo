@@ -1,0 +1,19 @@
+pipeline {
+    agent {
+        node {
+            label "built-in"
+        }
+    }
+    stages {
+        stage ('create file') {
+            steps {
+                sh "touch 1.txt 2.txt 3.txt"
+            }
+        }
+        stage ('add 1.txt') {
+            steps {
+                sh "echo 'hello i am from 1 >> 1.txt'"
+            }
+        }
+    }
+}
