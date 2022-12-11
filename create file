@@ -13,7 +13,7 @@ pipeline {
         }
         stage ('add 1.txt') {
             steps {
-                sh "echo 'hello i am from 1 >> 1.txt'"
+                sh "echo 'hello i am from 1' >> 1.txt"
             }
         }
     }
