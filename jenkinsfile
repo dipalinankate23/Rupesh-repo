@@ -19,12 +19,12 @@ pipeline {
         stage ('create') {
             steps {
                 sh "echo 'i am Rupesh' >> index.html"
+                sh 'chmod 777 index.html'
             }
         }
         stage ('copy-file') {
             steps {
                 sh 'cp index.html /var/www/html/'
-                sh 'chmod 777 index.html'
             }
         }
     }
