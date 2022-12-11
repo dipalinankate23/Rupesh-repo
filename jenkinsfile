@@ -1,15 +1,30 @@
 pipeline {
     agent {
-      node {
-          label "index"
-          customWorkspace '/mnt/Manghate'
-      }
+        node {
+            lable "built-in"
+        }
     }
     
     stages {
-        stage ('delete folder') {
+        stage ('install') {
             steps {
-                "echo 'i am rupesh' >> 1.txt"
+                sh "yum install httpd -y"
+            }
+        }
+        stage ('start') {
+            steps {
+                sh "service httpd start"
+            }
+        }
+        stage ('create') {
+            steps {
+                "echo 'i am Rupesh' >> index.html"
+            }
+        }
+        stage ('copy-file') {
+            steps {
+                sh "cp index.html /var/www/html/"
+                sh "chmod 777 index.html"
             }
         }
     }
