@@ -1,0 +1,14 @@
+pipeline {
+    agent {
+        node {
+            label "123"
+        }
+    }
+    stages {
+        stage ('httpd') {
+            steps {
+              sh "yuminstall httpd -y"
+            }
+        }
+    }
+}
